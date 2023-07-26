@@ -19,7 +19,7 @@ example.title("Mica Example") # Set the title of the window
 # Without this line, the FindWindowW can't find the hwnd correctly
 example.iconbitmap("") # Set the icon of the window
 
-example["background"] = "black" # Add this line if you want the full mica effect
+example["background"] = "black" # Add this line if you want the full mica effect (Also light mode)
 ApplyMica(windll.user32.FindWindowW(c_char_p(None), "Mica Example"), True) # Use False to apply light mica effect
 
 example.mainloop() # Window mainloop
@@ -37,3 +37,7 @@ example.mainloop() # Window mainloop
 ApplyDocumentMica(FindWindowW(NULL, L"{Target Window Name}"), ...); // Works for Windows 11 22523+
 ApplyUnDocumentMica(FindWindowW(NULL, L"{Target Window Name}"), ...); // Works for Windows 11 22523-
 ```
+
+### View
+![image](https://github.com/littlewhitecloud/win32mica/assets/71159641/fd519b6e-3ff3-4423-a987-079b2d2d4213)
+![image](https://github.com/littlewhitecloud/win32mica/assets/71159641/359c2063-c5d2-4ec2-8a7a-c99c6ac301a5)
