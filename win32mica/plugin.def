@@ -1,0 +1,5 @@
+; plugin.def & plugin.c -> plugin.dll
+LIBRARY plugin.dll
+EXPORTS
+	ApplyDocumentMica @1
+	ApplyUndocumentMica @2
