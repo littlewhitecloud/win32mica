@@ -9,7 +9,6 @@
 #    DARK: bool  = 1
 
 
-# A small example
 from tkinter import Tk
 from win32mica import ApplyMica, MICATHEME
 from ctypes import windll, c_char_p

@@ -1,9 +1,10 @@
+/* Apply mica for win32 applications */
 #include <Windows.h>
 #include <dwmapi.h>
+#include "plugin.h"
 #pragma comment(lib, "Dwmapi.lib")
 
-__declspec(dllexport) void ApplyDocumentMica(HWND hwnd, bool theme) {
-	/* Apply mica for win32 applications */
+void ApplyDocumentMica(HWND hwnd, bool theme) {
 	MARGINS margins = {-1, -1, -1, -1};
 	int mica_entry = 38, mica_value = 0x02; // Windows 11 23523+
 	DwmExtendFrameIntoClientArea(hwnd, &margins);
@@ -11,8 +12,7 @@ __declspec(dllexport) void ApplyDocumentMica(HWND hwnd, bool theme) {
 	DwmSetWindowAttribute(hwnd, mica_entry, &mica_value, sizeof(int));
 }
 
-__declspec(dllexport) void ApplyUndocumentMica(HWND hwnd, bool theme) {
-	/* Apply mica for win32 applications */
+void ApplyUndocumentMica(HWND hwnd, bool theme) {
 	MARGINS margins = {-1, -1, -1, -1};
 	int mica_entry = 1029, mica_value = 0x01; // Windows 11 23523-
 	DwmExtendFrameIntoClientArea(hwnd, &margins);

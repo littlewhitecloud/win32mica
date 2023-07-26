@@ -1,0 +1,1 @@
+If you want to run c++ example, please copy `plugin.h` `plugin.lib` `plugin.dll` here and compile the file
