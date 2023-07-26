@@ -34,11 +34,9 @@ example.mainloop() # Window mainloop
 ### C / C++
 ```c++
 #include <Windows.h>
-#include <Dwmapi.h>
+#include "plugin.h" 
+#pragma comment(lib, "plugin.lib")
 #pragma comment(lib, "user32.lib")
-#pragma comment(lib, "dwmapi.lib")
-
-// Your code ...
 
 ApplyDocumentMica(FindWindowW(NULL, L"{Target Window Name}"), ...); // Works for Windows 11 22523+
 ApplyUnDocumentMica(FindWindowW(NULL, L"{Target Window Name}"), ...); // Works for Windows 11 22523-
