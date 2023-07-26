@@ -1,4 +1,4 @@
-/* Apply mica for win32 applications */
+// plugin.cpp - Apply mica for win32 applications
 #include <Windows.h>
 #include <dwmapi.h>
 #include "plugin.h"

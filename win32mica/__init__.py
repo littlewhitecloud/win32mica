@@ -1,3 +1,4 @@
+"""Export the funtion for python"""
 from ctypes import windll
 from pathlib import Path
 from sys import getwindowsversion

@@ -1,3 +1,4 @@
+// plugin.h - Define the functions that need to be exported
 #pragma once
 #include <Windows.h>
 
