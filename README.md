@@ -1,2 +1,39 @@
 # win32mica
 Apply mica effect for win32 applications
+
+### Python
+```python
+# from win32mica import ApplyMica
+# ApplyMica(hwnd: int, theme: bool)
+#    hwnd: your window hwnd
+#    theme: true -> dark | false -> light
+
+# A small example
+from tkinter import Tk
+from win32mica import ApplyMica
+from ctypes import windll, c_char_p
+
+example = Tk() # Create a Tk window
+example.geometry("1165x605") # Set the size of the window
+example.title("Mica Example") # Set the title of the window
+# Without this line, the FindWindowW can't find the hwnd correctly
+example.iconbitmap("") # Set the icon of the window
+
+example["background"] = "black" # Add this line if you want the full mica effect
+ApplyMica(windll.user32.FindWindowW(c_char_p(None), "Mica Example"), True) # Use False to apply light mica effect
+
+example.mainloop() # Window mainloop
+```
+
+### C / C++
+```c++
+#include <Windows.h>
+#include <Dwmapi.h>
+#pragma comment(lib, "user32.lib")
+#pragma comment(lib, "dwmapi.lib")
+
+// Your code ...
+
+ApplyDocumentMica(FindWindowW(NULL, L"{Target Window Name}"), ...); // Works for Windows 11 22523+
+ApplyUnDocumentMica(FindWindowW(NULL, L"{Target Window Name}"), ...); // Works for Windows 11 22523-
+```
