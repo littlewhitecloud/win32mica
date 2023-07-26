@@ -47,4 +47,5 @@ ApplyDocumentMica(FindWindowW(NULL, L"{Target Window Name}"), ...);
 
 ### View
 ![image](https://github.com/littlewhitecloud/win32mica/assets/71159641/fd519b6e-3ff3-4423-a987-079b2d2d4213)
-![image](https://github.com/littlewhitecloud/win32mica/assets/71159641/359c2063-c5d2-4ec2-8a7a-c99c6ac301a5)
+![image](https://github.com/littlewhitecloud/win32mica/assets/71159641/0a784df0-bf5d-4cf4-b6d1-cd170a396753)
+
