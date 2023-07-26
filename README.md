@@ -31,7 +31,8 @@ ApplyMica(windll.user32.FindWindowW(c_char_p(None), "Mica Example"), MICATHEME.D
 example.mainloop() # Window mainloop
 ```
 
-### C / C++
+### C++
+> If you want to run the example, please copy `plugin.h` `plugin.lib` `plugin.dll` here and compile the file
 ```c++
 #include <Windows.h>
 #include "plugin.h" 
