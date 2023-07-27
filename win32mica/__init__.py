@@ -2,8 +2,9 @@
 from ctypes import windll
 from pathlib import Path
 from sys import getwindowsversion
+from platform import platform
 
-if (getwindowsversion().major < 11):
+if getwindowsversion().build < 22000:
     raise OSError("To apply mica effect to the win32 application, please use Windows 11")
 
 env = Path(__file__).parent
