@@ -13,8 +13,12 @@ Apply mica effect for win32 applications
 #    LIGHT: bool = 0
 #    DARK: bool  = 1
 
+import ctypes
+ApplyMica(ctypes.windll.user32.FindWindowW(ctypes.c_char_p(None), "{Target Window Name}"), ...);
+```
 
-# A small example
+### A small example
+```python
 from tkinter import Tk
 from win32mica import ApplyMica, MICATHEME
 from ctypes import windll, c_char_p
