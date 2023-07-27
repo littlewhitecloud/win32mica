@@ -1,1 +1,1 @@
-If you want to run c++ example, please copy `plugin.h` `plugin.lib` `plugin.dll` here and compile the file
+If you want to run c++ example, please copy `win32mica.h` `win32mica.lib` `win32mica.dll` here and compile the file

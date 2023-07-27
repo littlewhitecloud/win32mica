@@ -1,6 +1,6 @@
 #include <Windows.h>
-#include "plugin.h" 
-#pragma comment(lib, "plugin.lib")
+#include "win32mica.h" 
+#pragma comment(lib, "win32mica.lib")
 #pragma comment(lib, "user32.lib")
 
 int main() {

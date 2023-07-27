@@ -1,12 +1,12 @@
 # from win32mica import ApplyMica
-# ApplyMica(hwnd: int, theme: bool)
+# ApplyMica(hwnd: int, theme: bol): function
 #    hwnd: your window hwnd
 #    theme: true -> dark | false -> light
 # 
 # from win32mica import MICATHEME
 # MICATHEME: class
-#    LIGHT: bool = 0
-#    DARK: bool  = 1
+#    LIGHT: bool = False
+#    DARK: bool  = True
 
 
 from tkinter import Tk
@@ -19,7 +19,7 @@ example.title("Mica Example") # Set the title of the window
 # Without this line, the FindWindowW can't find the hwnd correctly
 example.iconbitmap("") # Set the icon of the window
 
-example["background"] = "black" # Add this line if you want the full mica effect
-ApplyMica(windll.user32.FindWindowW(c_char_p(None), "Mica Example"), MICATHEME.DARK) # Use False to apply light mica effect
+example["background"] = "black" # Add this line if you want the full mica effect(Also light mode)
+ApplyMica(windll.user32.FindWindowW(c_char_p(None), "Mica Example"), MICATHEME.DARK) # Use False or MICATHEME.LIGHT to apply light mica effect
 
 example.mainloop() # Window mainloop

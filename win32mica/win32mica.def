@@ -1,0 +1,6 @@
+; win32mica.def - Define the functions that need to be exported
+; win32mica.def & win32mica.c -> win32mica.dll
+LIBRARY win32mica.dll
+EXPORTS
+	ApplyDocumentMica @1
+	ApplyUndocumentMica @2

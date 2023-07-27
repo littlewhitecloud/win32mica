@@ -4,7 +4,7 @@ Apply mica effect for win32 applications
 ### Python
 ```python
 # from win32mica import ApplyMica
-# ApplyMica(hwnd: int, theme: bool)
+# ApplyMica(hwnd: int, theme: bol): function
 #    hwnd: your window hwnd
 #    theme: true -> dark | false -> light
 # 
@@ -13,6 +13,7 @@ Apply mica effect for win32 applications
 #    LIGHT: bool = False
 #    DARK: bool  = True
 
+# Basic usage
 import ctypes
 ApplyMica(ctypes.windll.user32.FindWindowW(ctypes.c_char_p(None), "{Target Window Name}"), ...);
 ```
@@ -29,18 +30,18 @@ example.title("Mica Example") # Set the title of the window
 # Without this line, the FindWindowW can't find the hwnd correctly
 example.iconbitmap("") # Set the icon of the window
 
-example["background"] = "black" # Add this line if you want the full mica effect
+example["background"] = "black" # Add this line if you want the full mica effect(Also light mode)
 ApplyMica(windll.user32.FindWindowW(c_char_p(None), "Mica Example"), MICATHEME.DARK) # Use False or MICATHEME.LIGHT to apply light mica effect
 
 example.mainloop() # Window mainloop
 ```
 
 ### C++
-> If you want to run the example, please copy `plugin.h` `plugin.lib` `plugin.dll` here and compile the file
+> If you want to run the example, please copy `win32mica.h` `win32mica.lib` `win32mica.dll` here and compile the file
 ```c++
 #include <Windows.h>
-#include "plugin.h" 
-#pragma comment(lib, "plugin.lib")
+#include "win32mica.h" 
+#pragma comment(lib, "win32mica.lib")
 #pragma comment(lib, "user32.lib")
 
 // true to apply dark mode
