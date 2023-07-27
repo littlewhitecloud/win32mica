@@ -1,6 +1,0 @@
-; plugin.def - Define the functions that need to be exported
-; plugin.def & plugin.c -> plugin.dll
-LIBRARY plugin.dll
-EXPORTS
-	ApplyDocumentMica @1
-	ApplyUndocumentMica @2
