@@ -10,8 +10,8 @@ Apply mica effect for win32 applications
 # 
 # from win32mica import MICATHEME
 # MICATHEME: class
-#    LIGHT: bool = 0
-#    DARK: bool  = 1
+#    LIGHT: bool = False
+#    DARK: bool  = True
 
 import ctypes
 ApplyMica(ctypes.windll.user32.FindWindowW(ctypes.c_char_p(None), "{Target Window Name}"), ...);
