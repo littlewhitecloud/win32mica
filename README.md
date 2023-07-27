@@ -30,7 +30,7 @@ example.title("Mica Example") # Set the title of the window
 example.iconbitmap("") # Set the icon of the window
 
 example["background"] = "black" # Add this line if you want the full mica effect
-ApplyMica(windll.user32.FindWindowW(c_char_p(None), "Mica Example"), MICATHEME.DARK) # Use False to apply light mica effect
+ApplyMica(windll.user32.FindWindowW(c_char_p(None), "Mica Example"), MICATHEME.DARK) # Use False or MICATHEME.LIGHT to apply light mica effect
 
 example.mainloop() # Window mainloop
 ```
@@ -42,6 +42,9 @@ example.mainloop() # Window mainloop
 #include "plugin.h" 
 #pragma comment(lib, "plugin.lib")
 #pragma comment(lib, "user32.lib")
+
+// true to apply dark mode
+// false to apply light mode
 
 // Works for Windows 11 22523+
 ApplyDocumentMica(FindWindowW(NULL, L"{Target Window Name}"), ...);
