@@ -8,11 +8,13 @@ if getwindowsversion().build < 22000:
 
 plugin = windll.LoadLibrary(str(Path(__file__).parent / "win32mica.dll"))
 
+
 class MICATHEME:
-	LIGHT: bool = False
-	DARK: bool = True
-		
-def ApplyMica(hwnd: int, theme: bool) -> None:
+    LIGHT: bool = False
+    DARK: bool = True
+
+
+def ApplyMica(hwnd: int = 0, theme: bool = True, micaalt: bool = False) -> None:
     """Apply mica effect for Win32 Applications
     Args:
         hwnd(int): The target window's hwnd
@@ -20,10 +22,10 @@ def ApplyMica(hwnd: int, theme: bool) -> None:
             false -> light
             true -> dark
     """
-    if getwindowsversion().build < 22523: # Mica isn't a public api
-        plugin.ApplyUndocumentMica(hwnd, theme)
+    if getwindowsversion().build < 22523:  # Mica isn't a public api
+        plugin.ApplyUndocumentMica(hwnd, theme, micaalt)
     else:
-        plugin.ApplyDocumentMica(hwnd, theme)
+        plugin.ApplyDocumentMica(hwnd, theme, micaalt)
 
 
 # Future idea: Follow system if user change the windows theme

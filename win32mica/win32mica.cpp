@@ -5,20 +5,25 @@
 
 #pragma comment(lib, "Dwmapi.lib")
 
-void ApplyDocumentMica(HWND hwnd, bool theme) {
+void ApplyDocumentMica(HWND hwnd, bool theme, bool micaalt) {
 	MARGINS margins = {-1, -1, -1, -1};
-	int mica_entry = 38, mica_value = 0x02; // Windows 11 23523+
+	int mica_entry = 38, mica_value = 0x00; // Windows 11 23523+
 
-	DwmExtendFrameIntoClientArea(hwnd, &margins);
+    mica_value = micaalt ? 0x04 : 0x02;
+
+    DwmExtendFrameIntoClientArea(hwnd, &margins);
 	DwmSetWindowAttribute(hwnd, 20, &theme, sizeof(int));
 	DwmSetWindowAttribute(hwnd, mica_entry, &mica_value, sizeof(int));
 }
 
-void ApplyUndocumentMica(HWND hwnd, bool theme) {
-	MARGINS margins = {-1, -1, -1, -1};
+void ApplyUndocumentMica(HWND hwnd, bool theme, bool micaalt)
+{
+    MARGINS margins = {-1, -1, -1, -1};
 	int mica_entry = 1029, mica_value = 0x01; // Windows 11 23523-
 
-	DwmExtendFrameIntoClientArea(hwnd, &margins);
+    mica_value = micaalt ? 0x04 : 0x01;
+
+    DwmExtendFrameIntoClientArea(hwnd, &margins);
 	DwmSetWindowAttribute(hwnd, 20, &theme, sizeof(int));
-	DwmSetWindowAttribute(hwnd, mica_entry, &mica_value, sizeof(int));	
+	DwmSetWindowAttribute(hwnd, mica_entry, &mica_value, sizeof(int));
 }
