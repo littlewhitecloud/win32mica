@@ -43,7 +43,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR pCmdLine, int nCmdShow
     }
 
 	SetLayeredWindowAttributes(hwnd, RGB(255, 255, 255), 0, LWA_COLORKEY);
-	ApplyDocumentMica(FindWindowW(NULL, L"Mica Win32 Application"), true); 
+	ApplyDocumentMica(FindWindowW(NULL, L"Mica Win32 Application"), true, true); 
 	
     ShowWindow(hwnd, nCmdShow);
 

@@ -14,13 +14,21 @@ class MICATHEME:
     DARK: bool = True
 
 
-def ApplyMica(hwnd: int = 0, theme: bool = True, micaalt: bool = False) -> None:
+class MICAMODE:
+    DEFAULT: bool = False
+    ALT: bool = True
+
+
+def ApplyMica(hwnd: int = 0, theme: bool = True, micaalt: bool = True) -> None:
     """Apply mica effect for Win32 Applications
     Args:
         hwnd(int): The target window's hwnd
         theme(bool):
             false -> light
             true -> dark
+        micaalt(bool):
+            false -> default
+            true -> alt
     """
     if getwindowsversion().build < 22523:  # Mica isn't a public api
         plugin.ApplyUndocumentMica(hwnd, theme, micaalt)

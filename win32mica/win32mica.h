@@ -3,10 +3,12 @@
 #include <Windows.h>
 
 #ifdef APPLYMICA_EXPORTS
-#define APPLYMICA_API __declspec(dllexport)
+#define DLLEXPORT __declspec(dllexport)
 #else
-#define APPLYMICA_API __declspec(dllimport)
+#define DLLEXPORT __declspec(dllimport)
 #endif
 
-extern "C" APPLYMICA_API void ApplyDocumentMica(HWND hwnd, bool theme);
-extern "C" APPLYMICA_API void ApplyUndocumentMica(HWND hwnd, bool theme);
+extern "C" {
+    DLLEXPORT void ApplyDocumentMica(HWND hwnd, bool theme, bool micaalt);
+    DLLEXPORT void ApplyUndocumentMica(HWND hwnd, bool theme, bool micaalt);
+}
