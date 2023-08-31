@@ -4,6 +4,6 @@
 #pragma comment(lib, "user32.lib")
 
 int main() {
-	ApplyDocumentMica(FindWindowW(NULL, L"Mica Example"), true);
+	ApplyDocumentMica(FindWindowW(NULL, L"Mica Example"), true, true);
 	return 0;
 } 
