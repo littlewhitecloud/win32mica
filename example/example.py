@@ -10,7 +10,7 @@
 
 
 from tkinter import Tk
-from win32mica import ApplyMica, MICATHEME
+from win32mica import ApplyMica, MICATHEME, MICAMODE
 from ctypes import windll, c_char_p
 
 example = Tk() # Create a Tk window
@@ -20,6 +20,8 @@ example.title("Mica Example") # Set the title of the window
 example.iconbitmap("") # Set the icon of the window
 
 example["background"] = "black" # Add this line if you want the full mica effect(Also light mode)
-ApplyMica(windll.user32.FindWindowW(c_char_p(None), "Mica Example"), MICATHEME.DARK) # Use False or MICATHEME.LIGHT to apply light mica effect
+ApplyMica(windll.user32.FindWindowW(c_char_p(None), "Mica Example"), MICATHEME.DARK, MICAMODE.ALT)
+# Use False or MICATHEME.LIGHT to apply light mica effect
+# USe False or MICAMODE.DEFAULT to apply mica effect, not mica alt
 
 example.mainloop() # Window mainloop
